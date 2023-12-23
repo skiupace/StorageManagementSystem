@@ -102,9 +102,15 @@ void StorageEmployee::checkout_products_in_cart() noexcept {
 				remove_from_cart();
 			}
 
-			else
+			else {
+				/* a Bug shows up here when cancelling the checkout operation
+				* Quantities for items in the cart, for example: 22
+				* I wanna checkout 11 of them
+				* If i declined the operation 
+				* It'll not re-added the taken quantities back
+				* I didn't fix it cuz i didn't have time for it (lazy). */
 				std::cout << "The operation has been cancelled ...\n";
-			break;
+			} break;
 
 		case 2:
 			std::cout << "\nEnter the product number to remove from cart: ";
