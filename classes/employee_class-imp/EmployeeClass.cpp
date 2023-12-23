@@ -8,7 +8,7 @@ inline constexpr bool StorageEmployee::isEmpty() const noexcept {
 	return array_size == 0;
 }
 
-void StorageEmployee::add_items_to_cart(const std::unique_ptr<StorageManager>& manager) noexcept {
+void StorageEmployee::add_items_to_cart(const std::unique_ptr<StorageManager>& manager) {
 
 	app_var.product_exist = false;
 	PrintInfo::print_all_items(manager);
@@ -62,7 +62,7 @@ void StorageEmployee::create_invoick() const noexcept {
 	}
 }
 
-void StorageEmployee::remove_from_cart() noexcept {
+void StorageEmployee::remove_from_cart() {
 	for (int i = 0; i < array_size; ++i) {
 		picked_products_numbers.at(i) = 0;
 		picked_products_names.at(i) = "";
@@ -71,7 +71,7 @@ void StorageEmployee::remove_from_cart() noexcept {
 	} array_size = 0;
 }
 
-void StorageEmployee::remove_from_cart(const int product_number) noexcept {
+void StorageEmployee::remove_from_cart(const int product_number) {
 	for (int i = product_number - 1; i < array_size; ++i) {
 		picked_products_numbers.at(i) = picked_products_numbers.at(i + 1);
 		picked_products_names.at(i) = picked_products_names.at(i + 1);
@@ -84,7 +84,7 @@ void StorageEmployee::remove_from_cart(const int product_number) noexcept {
 	app_var.product_number--;
 }
 
-void StorageEmployee::checkout_products_in_cart() noexcept {
+void StorageEmployee::checkout_products_in_cart() {
 
 	create_invoick();
 	if (!isEmpty()) {

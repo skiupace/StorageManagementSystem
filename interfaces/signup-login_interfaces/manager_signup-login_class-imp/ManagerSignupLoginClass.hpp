@@ -2,7 +2,7 @@
 
 class ManagerSignupLoginInterface {
 public:
-	void manager_signup_login_interface() noexcept {
+	void manager_signup_login_interface() {
 		do {
 			PrintInfo::print_signup_login_menu();
 			InputHandler::input_and_error_handler(app_var.choice);

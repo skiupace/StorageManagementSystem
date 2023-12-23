@@ -4,7 +4,7 @@
 #include "../app_variables_struct/VariablesStruct.hpp"
 #include "../input_handler_class-imp/InputHandlerClass.hpp"
 
-void SearchingForInfo::search_by_product_number(const std::unique_ptr<StorageManager>& manager_object) noexcept {
+void SearchingForInfo::search_by_product_number(const std::unique_ptr<StorageManager>& manager_object) {
 
 	app_var.product_exist = false;
 	std::cout << "Enter the product number : ";
@@ -25,7 +25,7 @@ void SearchingForInfo::search_by_product_number(const std::unique_ptr<StorageMan
 		return;
 }
 
-void SearchingForInfo::search_by_product_name(const std::unique_ptr<StorageManager>& manager_object) noexcept {
+void SearchingForInfo::search_by_product_name(const std::unique_ptr<StorageManager>& manager_object) {
 
 	app_var.product_exist = false;
 	std::cout << "Enter the product name : ";
@@ -46,7 +46,7 @@ void SearchingForInfo::search_by_product_name(const std::unique_ptr<StorageManag
 		return;
 }
 
-void SearchingForInfo::search_by_product_price(const std::unique_ptr<StorageManager>& manager_object) noexcept {
+void SearchingForInfo::search_by_product_price(const std::unique_ptr<StorageManager>& manager_object) {
 
 	app_var.product_exist = false;
 	std::cout << "Enter the product price : ";
@@ -67,7 +67,7 @@ void SearchingForInfo::search_by_product_price(const std::unique_ptr<StorageMana
 		return;
 }
 
-void SearchingForInfo::search_by_product_quantity(const std::unique_ptr<StorageManager>& manager_object) noexcept {
+void SearchingForInfo::search_by_product_quantity(const std::unique_ptr<StorageManager>& manager_object) {
 
 	app_var.product_exist = false;
 	std::cout << "Enter the product quantity : ";
@@ -88,7 +88,7 @@ void SearchingForInfo::search_by_product_quantity(const std::unique_ptr<StorageM
 		return;
 }
 
-void SearchingForInfo::search_for_existing_item(const std::unique_ptr<StorageManager>& manager_object) noexcept {
+void SearchingForInfo::search_for_existing_item(const std::unique_ptr<StorageManager>& manager_object) {
 
 	if (manager_object->isEmpty())
 		std::cout << "Sorry but the storage is empty ...\n";

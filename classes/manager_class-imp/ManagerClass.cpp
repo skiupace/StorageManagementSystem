@@ -12,7 +12,7 @@ inline constexpr bool StorageManager::isFull() const noexcept {
 	return array_size == 99;
 }
 
-bool constexpr StorageManager::isExist(bool product_exist) noexcept {
+constexpr bool StorageManager::isExist(bool product_exist) noexcept {
 	if (!product_exist) {
 		std::cout << "The value isn't valid, please try again ...\n";
 		return false;
@@ -20,7 +20,7 @@ bool constexpr StorageManager::isExist(bool product_exist) noexcept {
 		return true;
 }
 
-void StorageManager::add_item_to_stock() noexcept {
+void StorageManager::add_item_to_stock() {
 
 	if (isFull())
 		std::cout << "Sorry but the storage is full ...\n";
@@ -43,7 +43,7 @@ void StorageManager::add_item_to_stock() noexcept {
 	}
 }
 
-void StorageManager::update_existing_item() noexcept {
+void StorageManager::update_existing_item() {
 	
 	if (isEmpty())
 		std::cout << "Sorry but the storage is empty ...\n";
@@ -101,7 +101,7 @@ void StorageManager::update_existing_item() noexcept {
 	}
 }
 
-void StorageManager::remove_item_from_stock() noexcept {
+void StorageManager::remove_item_from_stock() {
 
 	std::cout << "--- Remove Products Informations ---\n\n";
 	std::cout << "Enter the product number : ";

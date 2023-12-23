@@ -3,7 +3,7 @@
 
 class EmployeeInterface : public ManagerInterface {
 public:
-	void employee_interface() noexcept {
+	void employee_interface() {
 		do {
 			PrintInfo::print_employee_menu();
 			InputHandler::input_and_error_handler(app_var.choice);

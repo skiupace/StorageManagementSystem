@@ -4,9 +4,9 @@
 class StorageManager : public StorageAttributes {
 public:
 	StorageManager() : array_size(0) {}
-	void add_item_to_stock() noexcept;
-	void update_existing_item() noexcept;
-	void remove_item_from_stock() noexcept;
+	void add_item_to_stock();
+	void update_existing_item();
+	void remove_item_from_stock();
 	// ------------------------------------------
 	static constexpr bool isExist(bool) noexcept;
 

@@ -16,7 +16,7 @@ void Login::set_account_info(std::string username, int password) noexcept {
 	this->password = password;
 }
 
-bool Login::is_account_exist(const Signup& signup) noexcept {
+bool Login::is_account_exist(const Signup& signup) {
 
 	int counter = 1;
 	while (counter <= 3) {

@@ -7,7 +7,7 @@
 
 class ManagerInterface {
 public:
-	void manager_interface() noexcept {
+	void manager_interface() {
 		do {
 			PrintInfo::print_manager_menu();
 			InputHandler::input_and_error_handler(app_var.choice);

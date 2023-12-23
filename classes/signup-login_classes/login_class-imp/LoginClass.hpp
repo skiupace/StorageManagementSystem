@@ -5,7 +5,7 @@ class Login {
 public:
 	Login();
 	Login(std::string, int);
-	bool is_account_exist(const Signup&) noexcept;
+	bool is_account_exist(const Signup&);
 	void set_account_info(std::string, int) noexcept;
 
 private:
