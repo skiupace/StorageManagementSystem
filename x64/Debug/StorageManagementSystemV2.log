@@ -1,0 +1,3 @@
+﻿  EmployeeClass.cpp
+C:\Dev\source\C++ Projects\StorageManagementSystemV2\StorageManagementSystemV2\classes\employee_class-imp\EmployeeClass.cpp(123,1): warning C4506: no definition for inline function 'bool StorageManager::isExist(bool) noexcept'
+  StorageManagementSystemV2.vcxproj -> C:\Dev\source\C++ Projects\StorageManagementSystemV2\x64\Debug\StorageManagementSystemV2.exe
