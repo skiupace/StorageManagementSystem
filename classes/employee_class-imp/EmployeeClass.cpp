@@ -36,10 +36,10 @@ void StorageEmployee::add_items_to_cart(const std::unique_ptr<StorageManager>& m
 			array_size++;
 		}
 		
-		if (manager->products_quantities.at(app_var.product_number - 1) > 0)
+		if (manager->products_quantities.at(app_var.product_number - 1) > 0) {
+			checkout_products_in_cart(manager, app_var.product_quantity, app_var.product_number);
 			manager->products_quantities.at(app_var.product_number - 1) -= app_var.product_quantity;
-
-		else
+		} else
 			PrintInfo::print_error_msg();
 	}
 }
@@ -84,8 +84,11 @@ void StorageEmployee::remove_from_cart(const int product_number) {
 	app_var.product_number--;
 }
 
-void StorageEmployee::checkout_products_in_cart() {
-
+void StorageEmployee::checkout_products_in_cart(
+	const std::unique_ptr<StorageManager>& manager = nullptr, 
+	const short appVar_products_quantities = 0,
+	const short appVar_product_number = 0
+) {
 	create_invoick();
 	if (!isEmpty()) {
 		PrintInfo::print_checkout_menu();
@@ -103,12 +106,8 @@ void StorageEmployee::checkout_products_in_cart() {
 			}
 
 			else {
-				/* a Bug shows up here when cancelling the checkout operation
-				* Quantities for items in the cart, for example: 22
-				* I wanna checkout 11 of them
-				* If i declined the operation 
-				* It'll not re-added the taken quantities back
-				* I didn't fix it cuz i didn't have time for it (lazy). */
+				// It's fixed "I Guess"
+				manager->products_quantities.at(appVar_product_number - 1) += appVar_products_quantities;
 				std::cout << "The operation has been cancelled ...\n";
 			} break;
 
